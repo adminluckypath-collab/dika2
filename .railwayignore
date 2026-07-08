@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+apple-quality-web/node_modules/
+apple-quality-web/dist/
+apple-quality-web/.env
+*.ipynb
+test_apple.jpg

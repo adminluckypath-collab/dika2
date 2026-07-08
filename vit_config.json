@@ -1,0 +1,21 @@
+{
+  "vit_model_name": "google/vit-base-patch16-224",
+  "vit_hidden_size": 768,
+  "image_size": 224,
+  "feature_order": [
+    "vit_cls_features",
+    "glcm_texture_features",
+    "color_mean_std_rgb"
+  ],
+  "texture_feature_names": [
+    "contrast",
+    "dissimilarity",
+    "homogeneity",
+    "energy",
+    "correlation"
+  ],
+  "label_mapping": {
+    "fresh": 0,
+    "rotten": 1
+  }
+}

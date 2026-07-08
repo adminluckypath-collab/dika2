@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+
+apple-quality-web/node_modules/
+apple-quality-web/dist/
+apple-quality-web/.env
+apple-quality-web/.env.*
+!apple-quality-web/.env.example
