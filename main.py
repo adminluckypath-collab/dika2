@@ -30,9 +30,16 @@ patch_numpy_bit_generator_pickle()
 def get_cors_origins():
     origins = os.environ.get(
         "CORS_ORIGINS",
-        "http://localhost:5173,http://127.0.0.1:5173",
+        "http://localhost:5173,http://127.0.0.1:5173,https://dika-red.vercel.app",
     )
     return [origin.strip() for origin in origins.split(",") if origin.strip()]
+
+
+def get_cors_origin_regex():
+    return os.environ.get(
+        "CORS_ORIGIN_REGEX",
+        r"https://.*\.vercel\.app",
+    )
 
 
 # Initialize FastAPI app
@@ -44,10 +51,11 @@ app = FastAPI(
 
 # Enable CORS for frontend integration.
 # Set CORS_ORIGINS on Railway to your Vercel URL, for example:
-# https://apple-quality-web.vercel.app
+# https://dika-red.vercel.app
 app.add_middleware(
     CORSMiddleware,
     allow_origins=get_cors_origins(),
+    allow_origin_regex=get_cors_origin_regex(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

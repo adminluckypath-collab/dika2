@@ -14,7 +14,8 @@ Railway will use:
 Set this environment variable in Railway after your Vercel domain is ready:
 
 ```env
-CORS_ORIGINS=https://your-vercel-app.vercel.app
+CORS_ORIGINS=https://dika-red.vercel.app
+CORS_ORIGIN_REGEX=https://.*\.vercel\.app
 ```
 
 For local development:
